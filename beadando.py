@@ -85,3 +85,41 @@ if letter_a == 0 and name_length > 4 and name_length < 8:
     print("Átlagos kutató vagy: nincs különleges bónuszod.")
 
 input("\n⏎ Nyomj Entert a kezdéshez...") # (YTB vid segytség)
+
+
+while hp > 0 and infection < 100 and day <= 9:
+
+    fight_now = 0
+
+    # napi státusz kiírása
+    print()
+    print("=" * WIDTH)
+    print(f"{day}. NAP".center(WIDTH))
+    print(f"❤️  HP: {hp}   🦠 Fertőzés: {infection}%".center(WIDTH))
+    print("=" * WIDTH)
+
+    # -----------------------------------------------------------------
+    # 0. NAP - A riasztás
+    # -----------------------------------------------------------------
+    if day == 0:
+        print(" B szektor - Kutatólabor")
+        print("06:42-kor megszólal a riasztó. N-17, a Nyx-vírus hordozója")
+        print("megszökött. A labor automatikusan lezár.")
+        print("A képernyőn: \"A kijutás nem engedélyezett.\"")
+        print()
+        print("A) Megpróbálod elérni a biztonsági központot.")
+        print("B) Átkutatod az irodát.")
+
+        choice = ""
+        while choice != "A" and choice != "B":
+            choice = input("Választásod (A/B): ").strip().upper()
+            if choice != "A" and choice != "B":
+                print(" Érvénytelen választás! Írj A-t vagy B-t.")
+
+        if choice == "A":
+            mark_helps = 1
+            print(" Márk Kovács biztonsági őr válaszol. Később segíthet.")
+        else:
+            map_found = 1
+            infection -= 10
+            print("  Felszerelést és egy laboratóriumi térképet találsz.")
