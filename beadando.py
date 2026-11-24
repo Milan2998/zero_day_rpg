@@ -123,3 +123,69 @@ while hp > 0 and infection < 100 and day <= 9:
             map_found = 1
             infection -= 10
             print("  Felszerelést és egy laboratóriumi térképet találsz.")
+
+
+# -----------------------------------------------------------------
+# 1. NAP - Az első nyomok
+# -----------------------------------------------------------------
+
+    elif day == 1:
+        print(" A szektor - Irodák")
+        print("A labor csendes. Egy jelentésből kiderül, hogy N-17")
+        print("már korábban is megpróbált megszökni.")
+        print()
+        print("A) Átkutatod a biztonsági irodát.")
+        print("B) Átkutatod a kutatói irodát.")
+
+        choice = ""
+        while choice != "A" and choice != "B":
+            choice = input("Választásod (A/B): ").strip().upper()
+            if choice != "A" and choice != "B":
+                print(" Érvénytelen választás! Írj A-t vagy B-t.")
+
+        if choice == "A":
+            keycard = 1
+            infection += 3
+            print(" Megtalálod a kijutáshoz szükséges kulcskártyát.")
+        else:
+            research_docs = 1
+            infection += 3
+            print(" Dr. Elena Varga első kutatási dokumentumait találod.")
+
+
+# -----------------------------------------------------------------
+# 2. NAP - A segélykérés
+# -----------------------------------------------------------------
+
+
+    elif day == 2:
+        print(" D szektor - Orvosi részleg")
+        print("A rádión női hang szólal meg:")
+        print("\"Itt Anna Szabó, a D-3-as helyiségben vagyok. Segíts!\"")
+        print()
+        print("A) Megpróbálod megmenteni Annát (fertőzésveszély!).")
+        print("B) Nem kockáztatsz, folytatod a saját tervedet.")
+
+        choice = ""
+        while choice != "A" and choice != "B":
+            choice = input("Választásod (A/B): ").strip().upper()
+            if choice != "A" and choice != "B":
+                print(" Érvénytelen választás! Írj A-t vagy B-t.")
+
+        if choice == "A":
+            infection += 10
+            if hp >= 60:
+                anna_ally = 1
+                suit = 1
+                print(" Sikerül kimenekítened Annát! Szövetségesed lesz,")
+                print("és ad neked egy biológiai védőruhát.")
+            else:
+                hp -= 10
+                print("Túl gyenge vagy, a mentés nem sikerül. Megsérülsz.")
+        else:
+            print(" Anna később már nem jelentkezik a rádión...")
+
+
+# -----------------------------------------------------------------
+# 3. NAP - Az első tünetek
+# -----------------------------------------------------------------
