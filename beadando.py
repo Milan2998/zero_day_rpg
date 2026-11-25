@@ -201,7 +201,7 @@ while hp > 0 and infection < 100 and day <= 9:
         for hours in range(1, 4):
             infection += 2 * hours
             infection = min(infection, 100)
-            print(f"🤒 {hours}. roham: a fertőzés {2 * hours}%-ot nő. "
+            print(f" {hours}. roham: a fertőzés {2 * hours}%-ot nő. "
                   f"(Összesen: {infection}%)")
 
         print("A) Lemegyek a fertőtlenítő kamrába.")
@@ -211,15 +211,15 @@ while hp > 0 and infection < 100 and day <= 9:
         while choice != "A" and choice != "B":
             choice = input("Választásod (A/B): ").strip().upper()
             if choice != "A" and choice != "B":
-                print("❌ Érvénytelen választás! Írj A-t vagy B-t.")
+                print(" Érvénytelen választás! Írj A-t vagy B-t.")
 
         if choice == "A":
             infection -= 25
-            print("🚿 A kamra lemossa rólad a vírus egy részét.")
+            print(" A kamra lemossa rólad a vírus egy részét.")
         else:
             code += 1
             infection += 8
-            print("💾 Megtalálod a kijárati kód első részét.")
+            print(" Megtalálod a kijárati kód első részét.")
 
         day += 1
 
@@ -228,12 +228,12 @@ while hp > 0 and infection < 100 and day <= 9:
  # -----------------------------------------------------------------ú
 
     elif day == 4:
-        print("📍 Vezetői iroda")
+        print(" Vezetői iroda")
 
         #Mark: kód másik resze 
         if mark_helps == 1:
             code += 1
-            print("📻 Márk rádión elküldi a kijárati kód egy részét!")
+            print(" Márk rádión elküldi a kijárati kód egy részét!")
             print()
 
         print("Egy régi hangfelvételt találsz Dr. Elena Vargától:")
@@ -248,14 +248,14 @@ while hp > 0 and infection < 100 and day <= 9:
         while choice != "A" and choice != "B":
             choice = input("Választásod (A/B): ").strip().upper()
             if choice != "A" and choice != "B":
-                print("❌ Érvénytelen választás! Írj A-t vagy B-t.")
+                print(" Érvénytelen választás! Írj A-t vagy B-t.")
 
         if choice == "A":
             recording = 1
-            print("💿 A felvétel nálad van.")
+            print(" A felvétel nálad van.")
         else:
             hp += 10
-            print("🗑️  Törlöd a felvételt. Kicsit jobban érzed magad.")
+            print("  Törlöd a felvételt. Kicsit jobban érzed magad.")
 
         day += 1
 
@@ -265,8 +265,8 @@ while hp > 0 and infection < 100 and day <= 9:
 # -----------------------------------------------------------------
 
     elif day > 0 and day % 5 == 0:
-        print("📍 B szektor - Kutatólabor")
-        print("🚨 03:17 - a labor VÉSZÜZEMMÓDBA kapcsol!")
+        print(" B szektor - Kutatólabor")
+        print(" 03:17 - a labor VÉSZÜZEMMÓDBA kapcsol!")
         print("A kamerákon megjelenik N-17. Megtalált téged.")
         print("A folyosón kaparászás hallatszik, az ajtó megremeg.")
         print()
@@ -277,14 +277,14 @@ while hp > 0 and infection < 100 and day <= 9:
         while choice != "A" and choice != "B":
             choice = input("Választásod (A/B): ").strip().upper()
             if choice != "A" and choice != "B":
-                print("❌ Érvénytelen választás! Írj A-t vagy B-t.")
+                print(" Érvénytelen választás! Írj A-t vagy B-t.")
 
         if choice == "A":
             if fast == 1 or infection % 2 == 0:
-                print("🤫 Visszatartod a lélegzeted... N-17 továbbmegy.")
+                print(" Visszatartod a lélegzeted... N-17 továbbmegy.")
                 print("(De később még visszatérhet.)")
             else:
-                print("😱 A patkány megérzi a szagodat! Meg kell küzdened vele.")
+                print(" A patkány megérzi a szagodat! Meg kell küzdened vele.")
                 fight_now = 1
         else:
             fight_now = 1
@@ -295,7 +295,7 @@ while hp > 0 and infection < 100 and day <= 9:
 # 6. NAP - Igazi kisérlet
 # -----------------------------------------------------------------
     elif day == 6:
-        print("📍 F szektor - Kutatási központ")
+        print(" F szektor - Kutatási központ")
         print("Megtalálod a Nyx-projekt végleges dokumentációját.")
         print("Kiderül: a vírus nem baleset volt. A vezetőség tudta.")
         print()
@@ -306,16 +306,16 @@ while hp > 0 and infection < 100 and day <= 9:
         while choice != "A" and choice != "B":
             choice = input("Választásod (A/B): ").strip().upper()
             if choice != "A" and choice != "B":
-                print("❌ Érvénytelen választás! Írj A-t vagy B-t.")
+                print(" Érvénytelen választás! Írj A-t vagy B-t.")
 
         if choice == "A":
             nyx_data = 1
             infection += 4
-            print("💾 Bizonyítékod van a vírus valódi eredetéről.")
+            print(" Bizonyítékod van a vírus valódi eredetéről.")
         else:
             helix_doc = 1
             infection += 4
-            print("💾 Megismered a labor megsemmisítési tervét.")
+            print("Megismered a labor megsemmisítési tervét.")
 
         day += 1
 
@@ -323,12 +323,12 @@ while hp > 0 and infection < 100 and day <= 9:
 # 7. NAP - A mentőcsapat
 # -----------------------------------------------------------------
     elif day == 7:
-        print("📍 Kommunikációs központ")
+        print(" Kommunikációs központ")
         print("Sikerül kapcsolatba lépned a mentőegység parancsnokával.")
         print("\"Tartózkodjon a helyén. Három nap múlva megérkezünk.\"")
         print("Elmagyaráznád a Nyx veszélyeit, de félbeszakít:")
         print("\"Tudunk a Nyxről.\"  - a kapcsolat megszakad.")
-        print("⚠️  HELIX-7 AKTIVÁLÁS - 72 ÓRA")
+        print("  HELIX-7 AKTIVÁLÁS - 72 ÓRA")
         print()
         print("A) Megpróbálod továbbítani a bizonyítékokat a külvilágnak.")
         print("B) Kikapcsolod a kommunikációs rendszert.")
@@ -337,17 +337,17 @@ while hp > 0 and infection < 100 and day <= 9:
         while choice != "A" and choice != "B":
             choice = input("Választásod (A/B): ").strip().upper()
             if choice != "A" and choice != "B":
-                print("❌ Érvénytelen választás! Írj A-t vagy B-t.")
+                print(" Érvénytelen választás! Írj A-t vagy B-t.")
 
         if choice == "A":
             if recording == 1 or nyx_data == 1 or helix_doc == 1:
                 sent = 1
-                print("📡 A bizonyítékok kijutnak a külvilágba!")
+                print(" A bizonyítékok kijutnak a külvilágba!")
             else:
-                print("📡 Nincs semmilyen bizonyítékod, amit elküldhetnél.")
+                print(" Nincs semmilyen bizonyítékod, amit elküldhetnél.")
         else:
             comms_off = 1
-            print("🔌 Kikapcsolod a rendszert. Már nem figyelhetnek meg,")
+            print(" Kikapcsolod a rendszert. Már nem figyelhetnek meg,")
             print("de a külvilággal sem tudsz beszélni.")
 
         day += 1
@@ -356,10 +356,10 @@ while hp > 0 and infection < 100 and day <= 9:
 # 8. NAP - A kijárat
 # -----------------------------------------------------------------
     elif day == 8:
-        print("📍 E szektor - Felszíni hozzáférés")
+        print(" E szektor - Felszíni hozzáférés")
         print("Egy hatalmas biztonsági ajtó áll előtted. A terminál kéri:")
         print("kulcskártya, biztonsági kód és biológiai védőruha.")
-        print("⚠️  HELIX-7 AKTIVÁLÁS - 48 ÓRA")
+        print("  HELIX-7 AKTIVÁLÁS - 48 ÓRA")
         print()
         print("A) Visszamész a laborba a hiányzó felszerelésért.")
         print("B) Megpróbálod erőszakkal kinyitni a kijáratot.")
@@ -368,46 +368,45 @@ while hp > 0 and infection < 100 and day <= 9:
         while choice != "A" and choice != "B":
             choice = input("Választásod (A/B): ").strip().upper()
             if choice != "A" and choice != "B":
-                print("❌ Érvénytelen választás! Írj A-t vagy B-t.")
+                print(" Érvénytelen választás! Írj A-t vagy B-t.")
 
         if choice == "A":
             # egy hiányzó tárgyat kapsz: kártya, kód, ruha sorrendben
             if keycard == 0:
                 keycard = 1
-                print("🔑 Megtalálod a hiányzó kulcskártyát.")
+                print(" Megtalálod a hiányzó kulcskártyát.")
             elif code < 2:
                 code = 2
-                print("💾 Megtalálod a kód hiányzó részét.")
+                print(" Megtalálod a kód hiányzó részét.")
             elif suit == 0:
                 suit = 1
-                print("🥼 Megtalálod a védőruhát.")
+                print(" Megtalálod a védőruhát.")
             else:
                 print("Mindened megvan, csak időt vesztegettél.")
             hp -= 10
             if map_found == 1:
                 infection += 10
-                print("🗺️  A térkép segít: kevesebb veszélyes szakaszt érintesz.")
+                print("  A térkép segít: kevesebb veszélyes szakaszt érintesz.")
             else:
                 infection += 15
         else:
             if comms_off == 1 or security_level == 1 or \
                     (keycard == 1 and infection % 2 == 0):
                 code = 2
-                print("💥 Az ajtó rendszere megadja magát! A kód felszabadul.")
+                print(" Az ajtó rendszere megadja magát! A kód felszabadul.")
             else:
                 hp -= 25
                 infection += 10
-                print("💢 Az ajtó nem enged, és megsérülsz. Értékes időt veszítesz.")
+                print(" Az ajtó nem enged, és megsérülsz. Értékes időt veszítesz.")
 
         day += 1
-
 
 # -----------------------------------------------------------------
 # 9. NAP - Az utolsó éjszaka
 # -----------------------------------------------------------------
     elif day == 9:
-        print("📍 Központi vezérlőterem")
-        print("⚠️  HELIX-7 AKTIVÁLÁS - 24 ÓRA")
+        print(" Központi vezérlőterem")
+        print("  HELIX-7 AKTIVÁLÁS - 24 ÓRA")
         print("Dr. Varga utolsó üzenete:")
         print("\"A védőruha nem garantálja, hogy nem vagy fertőzött.\"")
         print("Rájössz: a fertőzöttséged a külvilágot is veszélyezteti.")
@@ -415,7 +414,7 @@ while hp > 0 and infection < 100 and day <= 9:
         # ha az 5. napon nem ölted meg most utadat fogja allni a N-17 (womp-womp)
         if rat_defeated == 0:
             print()
-            print("🐀 N-17 előbukkan a sötétből, és elállja az utat!")
+            print(" N-17 előbukkan a sötétből, és elállja az utat!")
             fight_now = 1
 
         print()
@@ -426,6 +425,43 @@ while hp > 0 and infection < 100 and day <= 9:
         while choice != "A" and choice != "B":
             choice = input("Választásod (A/B): ").strip().upper()
             if choice != "A" and choice != "B":
-                print("❌ Érvénytelen választás! Írj A-t vagy B-t.")
+                print(" Érvénytelen választás! Írj A-t vagy B-t.")
 
         day += 1
+
+
+# -----------------------------------------------------------------
+# 10. NAP - A befejezés
+# -----------------------------------------------------------------
+
+
+print()
+print("=" * WIDTH)
+print("10. NAP - ZÉRÓ NAP".center(WIDTH))
+print("=" * WIDTH)
+
+if infection >= 100 or hp <= 0:
+    print("A Nyx-vírus legyőz. A labor csendjében a legendád véget ér.")
+
+elif escaped == 1:
+    if infection >= 80:
+        print("Kijutsz, de a mentőcsapat észleli a fertőzésedet,")
+        print("és karanténba zár. Életben maradsz, de a sorsod bizonytalan.")
+    elif sent == 0:
+        print("Kijutsz, de bizonyíték nélkül senki sem hisz neked.")
+        print("A vezetőség elhallgattat.")
+    else:
+        print("Kijutsz a felszínre, és a bizonyítékoddal")
+        print("leleplezed a Helix Biolabort.")
+
+elif protocol_stopped == 1:
+    print("Megállítod a HELIX-7-et, és a mentőcsapat megérkezik.")
+    print("Életben vagy, de a vezetőség karanténba zár.")
+
+else:
+    print("A mentőcsapat nem menteni érkezik. Végrehajtják a")
+    print("HELIX-7 protokollt, és megsemmisítik a labort")
+    print("a benne rekedt emberekkel együtt.")
+
+print("Köszönjük hogy játszottál!")
+
