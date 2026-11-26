@@ -425,10 +425,80 @@ while hp > 0 and infection < 100 and day <= 9:
         while choice != "A" and choice != "B":
             choice = input("Választásod (A/B): ").strip().upper()
             if choice != "A" and choice != "B":
-                print(" Érvénytelen választás! Írj A-t vagy B-t.")
+                print("Érvénytelen választás! Írj A-t vagy B-t.")
 
-        day += 1
 
+    if fight_now == 1:
+        rat_hp = 40
+        print()
+        print("⚔️ " + "HARC N-17-TEL".center(WIDTH - 6) + " ⚔️")
+
+        while rat_hp > 0 and hp > 0 and infection < 100:
+            print()
+            print(f" N-17: {rat_hp} HP   |     Te: {hp} HP   |   "
+                  f" {infection}%")
+            print("1 = Támadás   2 = Védekezés (felére csökken a sebzés)")
+
+            # típuskonverzió: szöveg -> egész szám
+            action = 0
+            while action != 1 and action != 2:
+                action_text = input("Mit teszel? ").strip()
+                if action_text.isdigit():
+                    action = int(action_text)
+                if action != 1 and action != 2:
+                    print(" Érvénytelen választás! Írj 1-et vagy 2-t.")
+                    action = 0
+
+            # a játékos köre
+            if action == 1:
+                rat_hp -= player_damage
+                if rat_hp < 0:
+                    rat_hp = 0
+                print(f"Megsebzed N-17-t: -{player_damage} HP.")
+            else:
+                print("Védekező állásba helyezkedsz.")
+
+            # a patkány köre (ha még él)
+            if rat_hp > 0:
+                if action == 2:
+                    damage_taken = rat_damage // 2
+                else:
+                    damage_taken = rat_damage
+                hp -= damage_taken
+                infection += 3
+                if hp < 0:
+                    hp = 0
+                print(f" N-17 megharap: -{damage_taken} HP, fertőzés +3%.")
+
+        if rat_hp <= 0:
+            rat_defeated = 1
+            print()
+            print("Legyőzted N-17-t! GGWP!")
+            if day == 5:
+                keycard = 1
+                print(" A patkány rejtekhelyén biztonsági kártyát találsz.")
+
+        # Ha nem ölted meg a N-17 -et
+if day == 9 and hp > 0 and infection < 100:
+        if choice == "A":
+            if keycard == 1 and code == 2 and suit == 1:
+                escaped = 1
+                print()
+                print("A kártya, a kód és a védőruha megvan.")
+                print("Az ajtó kinyílik, és kiléptél a felszínre!")
+            else:
+                print()
+                print("Az ajtó nem nyílik: hiányzik valami a kijutáshoz.")
+        else:
+            if helix_doc == 1:
+                protocol_stopped = 1
+                print()
+                print("A dokumentáció alapján leállítod a HELIX-7-et!")
+            else:
+                print()
+                print("Nincs meg a HELIX-7 dokumentációja. A leállítás nem megy.")
+
+                day += 1
 
 # -----------------------------------------------------------------
 # 10. NAP - A befejezés
